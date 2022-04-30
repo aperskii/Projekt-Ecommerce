@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .nav-buttons{
-    margin-left: 60%;
+    margin-left: 55%;
 }
 
 *{
@@ -63,6 +63,7 @@ button:hover{
     padding-bottom: 2rem !important;
     top: 0;
     left: 0;
+    box-shadow: 0 5px 10px rgb(0, 0, 0,0.1);
 }
 
 .navbar-light .navbar-nav .nav-link{
@@ -244,4 +245,70 @@ hr{
 
 #banner button:hover{
     background-color: black;
+}
+
+footer{
+    background-color: #222222;
+}
+
+footer h5{
+    color: #d8d8d8;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+footer li {
+    padding-bottom: 4px;
+}
+
+footer li a {
+    font-size: 0.8rem;
+    color: #999;
+    text-decoration: none;
+}
+
+footer li a:hover{
+    color: #d8d8d8;
+}
+
+footer .copyright a{
+    color: #000;
+    height: 40px;
+    width: 40px;
+    background-color: #d8d8d8;
+    display: inline-block;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    margin: 0 5px;
+}
+
+footer .copyright a:hover{
+    color: #d8d8d8;
+    background-color: #fb774b;
+}
+
+footer p{
+    color: #d8d8d8;
+}
+
+.copyright img{
+    width: 40%;
+}
+
+.logo{
+    width: 40px;
+    height: 40px;
+}
+
+footer .logo{
+    background-color: #000;
+    color: #000;
+}
+
+.navbar .brand{
+    color: coral;
+    margin: 3px 5px;
+    font-size: 1.5rem;
 }

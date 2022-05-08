@@ -1,3 +1,23 @@
+<?php
+
+session_start();
+if( !empty($_SESSION['cart'])  && isset($_POST['checkout'])) {
+
+// let user in
+
+
+
+// send user to home page
+}else{
+  header('location: index.php');
+}
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +34,7 @@
     
     <!-- NAVBAR-->
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
       <div class="container">
           <img class="logo" src="/assets/imgs/logo.jpeg" alt="">
           <h2 class="brand">Store</h2>
@@ -48,91 +68,69 @@
           </ul>
         </div>
       </div>
-  </nav>
-    
-    <!-- Account-->
+    </nav>
+
+
+    <!-- Checkout-->
 
     <section class="my-5 py-5">
-        <div class="row container mx-auto">
-            <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
-                <h3 class="font-weight-bold">Account info</h3>
-                <hr style="background-color: #fb774b;"  class="mx-auto" >
-                <div class="account-info">
-                    <p>Name : <span>Yassine</span></p>
-                    <p>Email : <span>Yassine@email.com</span></p>
-                    <p><a href="#" id="order-btn">Your orders</a></p>
-                    <p><a href="#" id="logout-btn">Logout</a></p>
+        <div class="container text-center mt-3 pt-5">
+            <h2 class="form-weight-bold">Checkout</h2>
+            <hr style="background-color: #fb774b;"  class="mx-auto" >
+        </div>
+        <div class="mx-auto container">
+            <form action="/server/place_order.php" method="POST" id="checkout-form">
+                <div class="form-group checkout-small-element">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" id="checkout-name" name="name" placeholder="Name" required>
                 </div>
-            </div>
-            <div class="col-lg-6 col-md-12 col-sm-12">
-                <form action="" id="account-form">
-                    <h3>Change Password</h3>
-                    <hr style="background-color: #fb774b;"  class="mx-auto" >
-                    <div class="form-group">
-                        <label for="">Password</label>
-                        <input type="password" class="form-control" name="password" id="account-password" placeholder="Password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Confirm Password</label>
-                        <input type="password" class="form-control" name="confirmPassword" id="account-password-confirm" placeholder="Password" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Change Password" class="btn" id="change-pass-btn">
-                    </div>
-                </form>
-            </div>
+                <div class="form-group checkout-small-element">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" id="checkout-email" name="email" placeholder="email" required>
+                </div>
+                <div class="form-group checkout-small-element">
+                    <label for="">Phone</label>
+                    <input type="tel" class="form-control" id="checkout-phone" name="phone" placeholder="Phone" required>
+                </div>
+                <div class="form-group checkout-small-element">
+                    <label for="">City</label>
+                    <input type="text" class="form-control" id="checkout-city" name="city" placeholder="City" required>
+                </div>
+                <div class="form-group checkout-large-element">
+                    <label for="">Address</label>
+                    <input type="text" class="form-control" id="checkout-address" name="address" placeholder="Address" required>
+                </div>
+                <div class="form-group checkout-btn-container">
+                  <p>Total amount : $ <?php echo $_SESSION['total']; ?></p>
+                    <input type="submit" name="place_order" class="btn" id="checkout-btn" value="Place Order">
+                </div>
+            </form>
         </div>
     </section>
 
 
-    
-    <!-- Orders-->
-
-    <section class="orders container my-5 py-3">
-        <div class="container mt-2">
-          <h2 class="font-weight-bold text-center">Your Orders</h2>
-          <hr class="mx-auto" style="background-color: #fb774b;">
-        </div>
-
-        <table class="mt-5 pt-5">
-          <tr>
-              <th>Product</th>
-              <th>Date</th>
-          </tr>
-          <tr>
-              <td>
-                <div class="product-info">
-                    <img src="/assets/imgs/featured7.jpeg" alt="">
-                    <div>
-                        <p class="mt-3">White Shoes</p>
-                    </div>
-                </div>
-              </td>
-
-              <td>
-                <span>2022-05-05</span>
-              </td>
-
-          </tr>
-        </table>
-
-    </section>
-
-    
 
 
 
 
-    
-    
-    
-    
-    
-    
-    
-    <!-- Footer -->
 
-     <footer class="mt-5 py-5">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Footer -->
+
+    <footer class="mt-5 py-5">
         <div class="row container mx-auto pt-5">
               <div class="footer-one col-lg-3 col-md-6 col-md-12">
                   <img class="logo" src="/assets/imgs/logo.jpeg" alt="">

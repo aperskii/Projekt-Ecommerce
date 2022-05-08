@@ -390,12 +390,17 @@ footer .logo{
     color: #fb774b;
     text-decoration: none;
     font-size: 14px;
+    border: none;
+    width: 100%;
+    background-color: white;
 }
 
 .cart .edit-btn{
     color: #fb774b;
     text-decoration: none;
     font-size: 15px;
+    border: none;
+    background-color: white;
 }
 
 .cart .product-info p {

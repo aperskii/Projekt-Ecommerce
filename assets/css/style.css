@@ -197,6 +197,13 @@ button:hover{
     transform: translateY(50px);
     opacity: 0;
     transform: 0.3s all;
+    color: #fff;
+}
+
+#shop .shop-buy-btn{
+    background-color: #fb774b;
+    opacity: 1;
+    color: #fff;
 }
 
 .product:hover .buy-btn{
@@ -575,3 +582,36 @@ th:last-child{
 #contact span {
     color: #fb774b;
 }
+
+
+/* Shop */
+#shop{
+    width:70%;
+    display: inline-block;
+}
+
+
+#search{
+    width:20%;
+    float: left;
+}
+
+
+.cart-quantity{
+    background-color: #fb774b;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 50%;
+    margin: -5px;
+    font-size: 1rem;
+}
+
+#shop .pagination a{
+    color: coral;
+}
+
+#shop .pagination li:hover a{
+    background-color: coral;
+    color: #fff;
+}
+

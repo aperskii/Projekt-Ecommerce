@@ -7,7 +7,7 @@ include('server/connection.php');
 
 
   //use search section
-if(isset($_POST['search'])){
+if(isset($_POST['search']) ){
 
   if(isset($_GET['page_no']) && $_GET['page_no'] != ""){
     //if usrr has already entered page then page number is the one that they selected
@@ -30,10 +30,10 @@ if(isset($_POST['search'])){
     $stmt1->fetch();
 
     //products per page
-    $total_records_per_page = 2;
+    $total_records_per_page = 8;
 
     $offset = ($page_no-1) * $total_records_per_page;
-
+    
     $previous_page = $page_no - 1;
     $next_page = $page_no + 1;
 
@@ -68,7 +68,7 @@ if(isset($_POST['search'])){
     $stmt1->fetch();
 
     //products per page
-    $total_records_per_page = 2;
+    $total_records_per_page = 8;
 
     $offset = ($page_no-1) * $total_records_per_page;
 
@@ -120,7 +120,7 @@ if(isset($_POST['search'])){
                         </div>
 
                         <div class="form-check">
-                          <input class="form-check-input" value="bag" name="category" type="radio" id="category_one" <?php if(isset($category) && $category == 'bags'){ echo 'checked';} ?>>
+                          <input class="form-check-input" value="bags" name="category" type="radio" id="category_one" <?php if(isset($category) && $category == 'bags'){ echo 'checked';} ?>>
                           <label for="flexRadioDefault4" class="form-check-label">Bags</label>
                         </div>
 
@@ -162,8 +162,8 @@ if(isset($_POST['search'])){
 
         <?php while ($row = $products->fetch_assoc() ){ ?>
 
-              <div onclick="window.location.href='single_product.php';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-                <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_image']; ?>" alt="">
+              <div onclick="window.location.href='<?php echo "single_product.php?product_id=".$row['product_id'];?>';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+                <img class="img-fluid mb-3" src="./assets/imgs/<?php echo $row['product_image']; ?>" alt="">
                 <div class="star">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>

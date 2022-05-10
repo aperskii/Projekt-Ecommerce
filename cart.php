@@ -130,7 +130,7 @@ function calculateTotalCart(){
           <tr>
               <td>
                 <div class="product-info">
-                  <img src="/assets/imgs/<?php echo $value['product_image']; ?>" alt="">
+                  <img src="./assets/imgs/<?php echo $value['product_image']; ?>" alt="">
                    <div>
                      <p><?php echo $value['product_name']; ?></p>
                      <small><span>$</span><?php echo $value['product_price']; ?></small>

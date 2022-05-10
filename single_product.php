@@ -35,19 +35,19 @@ else{
         <?php while ($row = $product -> fetch_assoc()){ ?>
 
             <div class="col-lg-5 col-md-6 col-sm-12">
-                <img class="img-fluid w-100 pb-1" src="/assets/imgs/<?php echo $row['product_image']; ?>" id="mainImg" alt="">
+                <img class="img-fluid w-100 pb-1" src="./assets/imgs/<?php echo $row['product_image']; ?>" id="mainImg" alt="">
                 <div class="small-img-group" id="imgGroup">
                     <div class="small-img-col">
-                        <img src="/assets/imgs/<?php echo $row['product_image']; ?>" width="100%" class="small-img" alt="">
+                        <img src="./assets/imgs/<?php echo $row['product_image']; ?>" width="100%" class="small-img" alt="">
                     </div>
                     <div class="small-img-col">
-                        <img src="/assets/imgs/<?php echo $row['product_image2']; ?>" width="100%" class="small-img" alt="">
+                        <img src="./assets/imgs/<?php echo $row['product_image2']; ?>" width="100%" class="small-img" alt="">
                     </div>
                     <div class="small-img-col">
-                        <img src="/assets/imgs/<?php echo $row['product_image3']; ?>" width="100%" class="small-img" alt="">
+                        <img src="./assets/imgs/<?php echo $row['product_image3']; ?>" width="100%" class="small-img" alt="">
                     </div>
                     <div class="small-img-col">
-                        <img src="/assets/imgs/<?php echo $row['product_image4']; ?>" width="100%" class="small-img" alt="">
+                        <img src="./assets/imgs/<?php echo $row['product_image4']; ?>" width="100%" class="small-img" alt="">
                     </div>
                 </div>
             </div>
@@ -88,8 +88,13 @@ else{
                   <hr class="mx-auto">
                 </div>
                 <div class="row mx-auto container-fluid">
-                  <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img class="img-fluid mb-3" src="assets/imgs/featured1.jpeg" alt="">
+
+                <?php include('server/get_featured_products.php');  ?>
+
+                <?php while($row=$featured_products->fetch_assoc()){  ?>
+
+                  <div onclick="window.location.href='<?php echo "single_product.php?product_id=".$row['product_id'];?>';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+                    <img class="img-fluid mb-3" src="./assets/imgs/<?php echo $row['product_image'];  ?>" alt="">
                     <div class="star">
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
@@ -97,53 +102,13 @@ else{
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
                     </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
+                    <h5 class="p-name"><?php echo $row['product_name'];  ?></h5>
+                    <h4 class="p-price">$<?php echo $row['product_price'];  ?></h4>
+                    <a href="<?php echo "single_product.php?product_id=".$row['product_id'];?>"><button class="buy-btn">Buy Now</button></a>
                   </div>
   
-                  <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img class="img-fluid mb-3" src="assets/imgs/featured2.jpeg" alt="">
-                    <div class="star">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                  </div>
-  
-                  <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img class="img-fluid mb-3" src="assets/imgs/featured3.jpeg" alt="">
-                    <div class="star">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                  </div>
-  
-                  <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-                    <img class="img-fluid mb-3" src="assets/imgs/featured4.jpeg" alt="">
-                    <div class="star">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <h5 class="p-name">Sports Shoes</h5>
-                    <h4 class="p-price">$199.8</h4>
-                    <button class="buy-btn">Buy Now</button>
-                  </div>
-  
+                  <?php }  ?>
+
                 </div>
   
               </section>
@@ -151,81 +116,6 @@ else{
 
 
 
-
-
-
-
-    <!-- Footer -->
-
-    <footer class="mt-5 py-5">
-        <div class="row container mx-auto pt-5">
-              <div class="footer-one col-lg-3 col-md-6 col-md-12">
-                  <img class="logo" src="/assets/imgs/logo.jpeg" alt="">
-                  <p class="pt-3">We provite the best products for the most affordable prices</p>
-              </div>
-
-            <div class="footer-one col-lg-3 col-md-6 col-md-12">
-              <h5 class="pb-2">Featured</h5>
-              <ul class="text-uppercase">
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Boys</a></li>
-                <li><a href="#">Girls</a></li>
-                <li><a href="#">New Arrivals</a></li>
-                <li><a href="#">clothes</a></li>
-              </ul>
-            </div>
-
-            <div class="footer-one col-lg-3 col-md-6 col-md-12">
-              <h5 class="pb-2">Contact Us</h5>
-              <div>
-                <h6 class="text-uppercase">Address</h6>
-                <p>1233 Street Name,City</p>
-              </div>
-
-              <div>
-                <h6 class="text-uppercase">Phone</h6>
-                <p>+123467980</p>
-              </div>
-
-              <div>
-                <h6 class="text-uppercase">Email</h6>
-                <p>info@email.com</p>
-              </div>
-            </div>
-
-          <div class="footer-one col-lg-3 col-md-6 col-md-12">
-              <h5 class="pb-2">Instagram</h5>
-              <div class="row">
-                <img src="/assets/imgs/featured1.jpeg" alt="" class="img-fluid w-25 h-100 m-2">
-                <img src="/assets/imgs/featured2.jpeg" alt="" class="img-fluid w-25 h-100 m-2">
-                <img src="/assets/imgs/watch2.jpeg" alt="" class="img-fluid w-25 h-100 m-2">
-                <img src="/assets/imgs/shoes2.jpeg" alt="" class="img-fluid w-25 h-100 m-2">
-                <img src="/assets/imgs/shoes1.jpeg" alt="" class="img-fluid w-25 h-100 m-2">
-              </div>
-          </div>
-
-        </div>
-
-        <div class="copyright mt-5">
-          <div class="row container mx-auto">
-            <div class="col-lg-4 col-md-5 col-sm-12 mb-4">
-              <img src="/assets/imgs/payment.jpeg" alt="">
-            </div>
-            <div class="col-lg-4 col-md-5 col-sm-12 mb-4 text-nowrap mb-2">
-              <p>E-Commerce @ 2022 All Right Reserved</p>
-            </div>
-            <div class="col-lg-4 col-md-5 col-sm-12 mb-4">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-
-        </div>
-
-      
-    </footer>
 
 
 

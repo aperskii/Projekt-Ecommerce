@@ -69,7 +69,7 @@ function calculateTotalOrderPrice($order_details){
                     <tr>
                         <td>
                             <div class="product-info">
-                                <img src="/assets/imgs/<?php echo $row['product_image']; ?>" alt="">  
+                                <img src="./assets/imgs/<?php echo $row['product_image']; ?>" alt="">  
                                 <div>
                                     <p class="mt-3"><?php echo $row['product_name']; ?></p>
                                 </div>

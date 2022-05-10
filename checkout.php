@@ -1,6 +1,8 @@
+<?php include('layouts/header.php'); ?>
+
+
 <?php
 
-session_start();
 
 //if user is not logged in
 if(!isset($_SESSION['logged_in']) ){
@@ -27,9 +29,6 @@ if(!isset($_SESSION['logged_in']) ){
 
 ?>
 
-
-
-<?php include('layouts/header.php'); ?>
 
 
 

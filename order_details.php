@@ -1,3 +1,6 @@
+<?php include('layouts/header.php'); ?>
+
+
 <?php
 
 include('server/connection.php');
@@ -42,9 +45,6 @@ function calculateTotalOrderPrice($order_details){
 
 ?>
 
-
-
-<?php include('layouts/header.php'); ?>
 
 
 

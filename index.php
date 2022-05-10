@@ -30,7 +30,7 @@
                   <img class="img-fluid" src="assets/imgs/1.jpeg" alt="">
                   <div class="details">
                     <h2>Extreamely Awesome Shoes</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <a href="shop.php"><button class="text-uppercase">Shop Now</button></a>
                   </div>
                 </div>
                     <!-- Two -->
@@ -38,7 +38,7 @@
                   <img class="img-fluid" src="assets/imgs/2.jpeg" alt="">
                   <div class="details">
                     <h2>Awesome Jackets</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <a href="shop.php"><button class="text-uppercase">Shop Now</button></a>
                   </div>
                 </div>
                     <!-- Three -->
@@ -46,7 +46,7 @@
                   <img class="img-fluid" src="assets/imgs/3.jpeg" alt="">
                   <div class="details">
                     <h2>50% OFF Watches</h2>
-                    <button class="text-uppercase">Shop Now</button>
+                    <a href="shop.php"><button class="text-uppercase">Shop Now</button></a>
                   </div>
                 </div>
               </div>
@@ -88,7 +88,7 @@
               <!-- Banner -->
             <section id="banner" class="my-5 py-5">
               <div class="container">
-                <h4>MID SEASON'S SALE</h4>
+                <h4 style="color: #fff;">MID SEASON'S SALE</h4>
                 <h1>Autumn Collection <br> UP TO 30% OFF</h1>
                 <button class="text-uppercase">Shop Now</button>
               </div>

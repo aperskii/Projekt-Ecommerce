@@ -1,6 +1,7 @@
+<?php include('layouts/header.php'); ?>
+
 <?php
 
-session_start();
 
 if(isset($_POST['order_pay_btn'])){
 
@@ -12,7 +13,6 @@ if(isset($_POST['order_pay_btn'])){
 
 
 
-<?php include('layouts/header.php'); ?>
 
 
     <!-- Payment-->

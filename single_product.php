@@ -1,3 +1,6 @@
+<?php include('layouts/header.php'); ?>
+
+
 <?php 
 
 include('server/connection.php');
@@ -22,8 +25,6 @@ else{
 
 ?>
 
-
-<?php include('layouts/header.php'); ?>
 
 
     <!-- Single Product-->

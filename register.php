@@ -1,5 +1,6 @@
+<?php include('layouts/header.php'); ?>
+
 <?php
-session_start();
 include('server/connection.php');
 
   //if user had already registred , then take user to account page
@@ -77,8 +78,6 @@ if(isset($_SESSION['logged_in'])){
 ?>
 
 
-
-<?php include('layouts/header.php'); ?>
     
 
 

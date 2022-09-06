@@ -191,7 +191,5 @@ if(isset($_SESSION['logged_in'])){
 
 
     
-    <?php include('layouts/footer.php') ;?>
-    
     
 <?php include('layouts/footer.php') ;?>
